@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @advertiser.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @advertiser.category %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @advertiser.address %>
+</p>
+
+<p>
+  <strong>Pincode:</strong>
+  <%= @advertiser.pincode %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @advertiser.phone %>
+</p>
+
+<p>
+  <strong>Is member:</strong>
+  <%= @advertiser.is_member %>
+</p>
+
+<p>
+  <strong>Wants calls:</strong>
+  <%= @advertiser.wants_calls %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @advertiser.user.email %>
+</p>
+<%= link_to 'Edit', edit_advertiser_path(@advertiser) %> |
+<%= link_to 'Back', advertisers_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :advertisers
   devise_for :users
   get 'pages/home'
 

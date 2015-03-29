@@ -1,0 +1,25 @@
+<% @advertiser.user || @advertiser.build_user %>
+<%= simple_form_for(@advertiser) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.input :address %>
+    <%= f.input :pincode %>
+    <%= f.input :phone %>
+    <%= f.input :is_member %>
+    <%= f.input :wants_calls %>
+  </div>
+  <%= f.fields_for :user do |user_form| %>
+    <div>
+     <%= user_form.input :email, required: true, autofocus: true %>
+     <%= user_form.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+     <%= user_form.input :password_confirmation, required: true %>
+   </div>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
